@@ -76,23 +76,5 @@ namespace WPF03
             MessageBox.Show("Не удаётся воспроизвести файл. Попробуйте ввести другой путь");
         }
 
-        private void Open_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new();
-            openFileDialog.Filter = "media element| *.mp4";
-            openFileDialog.ShowDialog();
-            player.Source = new Uri(openFileDialog.FileName);
-        }
-
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            player.Source = null;
-            textBlock.Text = null;
-        }
-
-        private void player_MediaOpened(object sender, RoutedEventArgs e)
-        {
-            textBlock.Text = Path.GetFileName(player.Source.ToString());
-        }
     }
 }
