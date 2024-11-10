@@ -23,7 +23,6 @@ namespace WPF03
             player.Volume = slider.Value;
             timer2.Tick += Timer_Tick;
 
-            textBlock.Text = Path.GetFileName(player.Source.ToString());
 
         }
         private void Timer_Tick(object? sender, EventArgs e)
